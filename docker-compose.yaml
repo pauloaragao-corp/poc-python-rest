@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  rest-cron:
+    build: .
+    container_name: rest_cron_container
+    volumes:
+      - ./rest.py:/usr/src/app/rest.py
+      - ./crontab:/etc/cron.d/rest_cron
+    environment:
+      - TZ=UTC
